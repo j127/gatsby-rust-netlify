@@ -1,8 +1,14 @@
 use warp::Filter;
+use std::collections::HashMap;
+
 
 #[tokio::main]
 async fn main() {
-    let routes = warp::any().map(|| "{\"msg\": \"x warp 🖖\"}");
+    let routes = warp::any().map(|| {
+        let mut message = HashMap::new();
+        message.insert("msg", "warp 🖖");
+        warp::reply::json(&message)
+    });
 
     let warp_service = warp::service(routes);
 
