@@ -14,5 +14,5 @@
         "removeComments": true,
         "jsxImportSource": "@emotion/react"
     },
-    "include": ["./gatsby/**/*"]
+    "include": ["src/**/*"]
 }

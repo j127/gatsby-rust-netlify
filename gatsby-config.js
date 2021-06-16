@@ -20,20 +20,20 @@ module.exports = {
     },
     plugins: [
         // This ignores the `src` dir, because I put the Rust code there.
-        {
-            resolve: "gatsby-plugin-page-creator",
-            options: {
-                path: `${__dirname}/src`,
-                ignore: ["*.js"],
-            },
-        },
-        // It will load pages from here instead.
-        {
-            resolve: "gatsby-plugin-page-creator",
-            options: {
-                path: `${__dirname}/gatsby/pages`,
-            },
-        },
+        // {
+        //     resolve: "gatsby-plugin-page-creator",
+        //     options: {
+        //         path: `${__dirname}/src`,
+        //         ignore: ["*.js"],
+        //     },
+        // },
+        // // It will load pages from here instead.
+        // {
+        //     resolve: "gatsby-plugin-page-creator",
+        //     options: {
+        //         path: `${__dirname}/gatsby/pages`,
+        //     },
+        // },
         "gatsby-plugin-emotion",
     ],
 };

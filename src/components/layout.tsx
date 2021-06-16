@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/navbar";
+import Navbar from "./navbar";
 import { Global, css } from "@emotion/react";
 import styled from "@emotion/styled";
 
