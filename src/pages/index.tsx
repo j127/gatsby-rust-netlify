@@ -2,6 +2,14 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
 import Spinner from "react-text-spinners";
 import Metadata from "../components/metadata";
+import styled from "@emotion/styled";
+
+const OutputArea = styled.div`
+    margin-top: 7px;
+    padding: 17px;
+    background-color: #eee;
+    border-radius: 3px;
+`;
 
 const HomePage: React.FC = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -15,23 +23,27 @@ const HomePage: React.FC = () => {
     };
 
     useEffect(() => {
-        fetchData().then((data) => {
-            setIsLoading(false);
-            setMessage(data);
-        });
+        fetchData()
+            .then((data) => {
+                setIsLoading(false);
+                setMessage(data);
+            })
+            .catch((err) => {
+                setIsLoading(false);
+                setMessage(
+                    "Sorry there was an error. This won't work until you deploy it."
+                );
+                console.error("there was an error", err);
+            });
     }, []);
 
     return (
         <Layout>
-            {/* TODO: There's an error with the static query in this component.
-                I'm not sure if it's because I moved gatsby to a non-standard dir.
-                The graphql query does work in graphiql.
-
             <Metadata
                 title="The Home Page"
                 description="This is the home page of the site"
                 isHomePage={true}
-            /> */}
+            />
 
             <h1>Home Page</h1>
 
@@ -40,9 +52,14 @@ const HomePage: React.FC = () => {
                 backend.
             </p>
             <hr />
-            <div>
-                {isLoading ? <Spinner theme="dots2" /> : <p>{message}</p>}
-            </div>
+
+            <OutputArea>
+                {isLoading ? (
+                    <Spinner theme="dots2" backgroundColor="#eee" />
+                ) : (
+                    <p>{message}</p>
+                )}
+            </OutputArea>
         </Layout>
     );
 };
