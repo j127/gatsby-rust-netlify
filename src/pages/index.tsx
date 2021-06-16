@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Layout from "../components/layout";
 import Spinner from "react-text-spinners";
-import Metadata from "../components/metadata";
 import styled from "@emotion/styled";
+
+import Layout from "../components/layout";
+import Metadata from "../components/metadata";
 
 const OutputArea = styled.div`
     margin-top: 7px;
@@ -51,6 +52,7 @@ const HomePage: React.FC = () => {
                 Anything below this line is from the Rust function on the
                 backend.
             </p>
+
             <hr />
 
             <OutputArea>
