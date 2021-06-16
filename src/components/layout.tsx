@@ -17,12 +17,7 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
         <Wrapper>
             <Global
                 styles={css`
-                    a {
-                        text-decoration: none;
-                    }
-                    a:hover {
-                        text-decoration: underline;
-                    }
+                    .navbar a,
                     .navbar a:hover {
                         text-decoration: none;
                     }
