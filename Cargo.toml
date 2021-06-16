@@ -9,4 +9,6 @@ path = "backend/main.rs"
 
 [dependencies]
 netlify_lambda_http = "0.2"
-tokio = { version = "1.0.1", features = ["macros"] }
+tokio = { version = "1.2.0", features = [ "full" ]}
+warp = "0.3"
+warp_lambda = "0.1"
