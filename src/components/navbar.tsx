@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "@emotion/styled";
+
+import { Link } from "gatsby";
 
 const Nav = styled.nav`
     display: flex;
