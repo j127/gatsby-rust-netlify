@@ -8,6 +8,9 @@ async fn main() {
     // to 404. It's something to try again later.
     // https://github.com/seanmonstar/warp/blob/master/examples/routing.rs
     // https://lib.rs/crates/warp_lambda
+    //
+    // Update: see also here:
+    // https://github.com/aslamplr/warp_lambda/blob/main/examples/lambda_request_context/main.rs
     let routes = warp::any().map(|| {
         let mut message = HashMap::new();
         message.insert("msg", "warp 🖖");
