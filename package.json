@@ -2,10 +2,22 @@
     "name": "gatsby-rust",
     "description": "Seeing if I can get Rust functions working on Netlify with Gatsby",
     "private": true,
+    "scripts": {
+        "start": "gatsby develop",
+        "clean": "gatsby clean",
+        "build": "gatsby build",
+        "format": "prettier \"**/*.{ts,vue,js,json,jsx,tsx,css,scss,html,md,mdx}\" --write"
+    },
     "dependencies": {
+        "@emotion/react": "^11.4.0",
+        "@emotion/styled": "^11.3.0",
+        "@types/react-helmet": "^6.1.1",
         "gatsby": "^3.7.2",
+        "gatsby-plugin-emotion": "^6.7.1",
+        "gatsby-plugin-page-creator": "^3.7.1",
         "react": "^17.0.2",
-        "react-dom": "^17.0.2"
+        "react-dom": "^17.0.2",
+        "react-helmet": "^6.1.0"
     },
     "devDependencies": {
         "prettier": "^2.3.1",
