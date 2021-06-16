@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
+import Spinner from "react-text-spinners";
 import Metadata from "../components/metadata";
 
 const HomePage: React.FC = () => {
+    const [isLoading, setIsLoading] = useState(true);
+    const [message, setMessage] = useState("");
+
+    const fetchData = async () => {
+        const url = "/.netlify/functions/backend";
+        const result = await fetch(url);
+        const { msg } = await result.json();
+        return msg;
+    };
+
+    useEffect(() => {
+        fetchData().then((data) => {
+            setIsLoading(false);
+            setMessage(data);
+        });
+    }, []);
+
     return (
         <Layout>
             {/* TODO: There's an error with the static query in this component.
@@ -16,12 +34,15 @@ const HomePage: React.FC = () => {
             /> */}
 
             <h1>Home Page</h1>
+
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                fugit nisi similique quaerat distinctio vel. Quis ad, provident
-                ut quaerat dicta nesciunt exercitationem error sapiente unde,
-                ullam, at aut cumque!
+                Anything below this line is from the Rust function on the
+                backend.
             </p>
+            <hr />
+            <div>
+                {isLoading ? <Spinner theme="dots2" /> : <p>{message}</p>}
+            </div>
         </Layout>
     );
 };
