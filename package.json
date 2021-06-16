@@ -1,0 +1,14 @@
+{
+    "name": "gatsby-rust",
+    "description": "Seeing if I can get Rust functions working on Netlify with Gatsby",
+    "private": true,
+    "dependencies": {
+        "gatsby": "^3.7.2",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    },
+    "devDependencies": {
+        "prettier": "^2.3.1",
+        "typescript": "^4.3.2"
+    }
+}
